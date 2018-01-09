@@ -147,6 +147,13 @@ let g:zoomwintab_hidetabbar=0                     " Don't hide tabbar when zoom.
 highlight NeomakeError ctermfg=196
 call neomake#configure#automake('nw', 750)        " Auto-make after 750ms
 
+" Tab Shortcut Keys
+"
+" Makes opening/closing and switching between tabs easier, stolen from byobu.
+nnoremap <F2> :tabnew<CR>
+nnoremap <F3> :tabprev<CR>
+nnoremap <F4> :tabnext<CR>
+
 " Custom Code Folding
 "
 " Vim's default fold text isn't super useful, so we replace it with something
