@@ -30,6 +30,7 @@ set nohlsearch                                    " Disable highlight search.
 set relativenumber                                " Show relative line numbers.
 set inccommand=nosplit                            " Preview substitutions.
 set copyindent                                    " Copy previous indent on <CR>.
+set fillchars+=vert:│                             " Nicer vsplit separator.
 set number                                        " On current line, show
                                                   " absolute line number.
 
