@@ -1,3 +1,5 @@
+let g:ycm_rust_src_path="/home/hellfire/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+
 "------------------------------------------------------------------------------"
 " Neovim Configuration                                                         "
 "------------------------------------------------------------------------------"
@@ -114,15 +116,6 @@ set noshowmode                                    " Don't show mode in command l
 let g:airline#extensions#tabline#enabled=1        " Show the tabline.
 let g:airline#extensions#tabline#buffer_nr_show=1 " Show buffer numbers.
 let g:airline#extensions#tabline#show_tabs=0      " Don't show tabs in tabline.
-
-" YouCompleteMe
-" https://github.com/Valloric/YouCompleteMe
-"
-" Code completion, everywhere.
-nnoremap <leader>jd <Esc>:YcmCompleter GoTo<CR>   " Jump to definition.
-let g:ycm_global_ycm_extra_conf = '~/.local/share/nvim/site/ycm_extra_conf.py'
-let g:ycm_key_list_select_completion = ['<TAB>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>']
 
 " Eclim
 "

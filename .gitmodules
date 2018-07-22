@@ -10,10 +10,6 @@
 	path = share/bundle/vim-kalisi
 	url = https://github.com/freeo/vim-kalisi
 	branch = master
-[submodule "share/bundle/YouCompleteMe"]
-	path = share/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-	branch = master
 [submodule "share/bundle/vim-bbye"]
 	path = share/bundle/vim-bbye
 	url = https://github.com/moll/vim-bbye.git
