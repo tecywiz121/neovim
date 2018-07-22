@@ -18,3 +18,11 @@ After you've done all that, select the newly installed font in your terminal
 emulator and your weird characters should disappear.
 
 [0]: https://github.com/powerline/fonts
+
+
+### Language Servers
+
+Each language server has to be set up externally to neovim. Double check
+`init.vim`, but the currently enabled servers are:
+
+    * Python: https://github.com/palantir/python-language-server

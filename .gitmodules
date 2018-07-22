@@ -69,3 +69,11 @@
 	path = share/bundle/neomake
 	url = https://github.com/neomake/neomake
 	branch = master
+[submodule "share/bundle/deoplete.nvim"]
+	path = share/bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+	branch = master
+[submodule "share/bundle/LanguageClient-neovim"]
+	path = share/bundle/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
+	branch = next

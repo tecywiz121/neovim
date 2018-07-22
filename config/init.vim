@@ -35,6 +35,21 @@ set copyindent                                    " Copy previous indent on <CR>
 set fillchars+=vert:│                             " Nicer vsplit separator.
 set number                                        " On current line, show
                                                   " absolute line number.
+" Deoplete
+" https://github.com/Shougo/deoplete.nvim
+"
+" Dark powered asynchronous completion framework for neovim/Vim8.
+let g:deoplete#enable_at_startup = 1              " Start at startup.
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
+
+" LanguageClient-neovim
+" https://github.com/autozimu/LanguageClient-neovim
+"
+" Client for servers providing language support and features.
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['~/.local/bin/pyls'],
+    \ }
 
 " DetectIndent
 " https://github.com/roryokane/detectindent
