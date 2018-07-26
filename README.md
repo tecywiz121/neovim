@@ -26,3 +26,4 @@ Each language server has to be set up externally to neovim. Double check
 `init.vim`, but the currently enabled servers are:
 
     * Python: https://github.com/palantir/python-language-server
+    * Rust: `rustup component add rls-preview rust-analysis rust-src`
