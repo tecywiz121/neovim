@@ -134,10 +134,6 @@ let g:airline#extensions#tabline#enabled=1        " Show the tabline.
 let g:airline#extensions#tabline#buffer_nr_show=1 " Show buffer numbers.
 let g:airline#extensions#tabline#show_tabs=0      " Don't show tabs in tabline.
 
-" Eclim
-"
-let g:EclimCompletionMethod = 'omnifunc'          " Required for YCM to work.
-
 " Signify
 " https://github.com/mhinz/vim-signify
 "

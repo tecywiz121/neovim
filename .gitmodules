@@ -37,10 +37,6 @@
 	path = share/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
 	branch = master
-[submodule "share/bundle/vim-eclim"]
-	path = share/bundle/vim-eclim
-	url = https://github.com/starcraftman/vim-eclim
-	branch = master
 [submodule "share/bundle/vim-pug"]
 	path = share/bundle/vim-pug
 	url = https://github.com/digitaltoad/vim-pug
