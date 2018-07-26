@@ -49,7 +49,9 @@ inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
 " Client for servers providing language support and features.
 let g:LanguageClient_serverCommands = {
     \ 'python': ['~/.local/bin/pyls'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
+nnoremap <leader>jd :call LanguageClient#textDocument_definition()<CR>
 
 " DetectIndent
 " https://github.com/roryokane/detectindent
@@ -154,7 +156,6 @@ let g:zoomwintab_hidetabbar=0                     " Don't hide tabbar when zoom.
 "
 " Asynchronously run programs.
 highlight NeomakeError ctermfg=196
-call neomake#configure#automake('nw', 750)        " Auto-make after 750ms
 
 " Tab Shortcut Keys
 "
