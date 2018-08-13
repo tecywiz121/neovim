@@ -1,5 +1,3 @@
-let g:ycm_rust_src_path="/home/hellfire/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-
 "------------------------------------------------------------------------------"
 " Neovim Configuration                                                         "
 "------------------------------------------------------------------------------"
