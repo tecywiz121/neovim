@@ -10,10 +10,6 @@
 	path = share/bundle/vim-kalisi
 	url = https://github.com/freeo/vim-kalisi
 	branch = master
-[submodule "share/bundle/YouCompleteMe"]
-	path = share/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-	branch = master
 [submodule "share/bundle/vim-bbye"]
 	path = share/bundle/vim-bbye
 	url = https://github.com/moll/vim-bbye.git
@@ -40,10 +36,6 @@
 [submodule "share/bundle/vim-airline-themes"]
 	path = share/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
-	branch = master
-[submodule "share/bundle/vim-eclim"]
-	path = share/bundle/vim-eclim
-	url = https://github.com/starcraftman/vim-eclim
 	branch = master
 [submodule "share/bundle/vim-pug"]
 	path = share/bundle/vim-pug
@@ -73,3 +65,11 @@
 	path = share/bundle/neomake
 	url = https://github.com/neomake/neomake
 	branch = master
+[submodule "share/bundle/deoplete.nvim"]
+	path = share/bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+	branch = master
+[submodule "share/bundle/LanguageClient-neovim"]
+	path = share/bundle/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
+	branch = next

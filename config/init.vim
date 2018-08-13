@@ -1,3 +1,5 @@
+let g:ycm_rust_src_path="/home/hellfire/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+
 "------------------------------------------------------------------------------"
 " Neovim Configuration                                                         "
 "------------------------------------------------------------------------------"
@@ -33,6 +35,23 @@ set copyindent                                    " Copy previous indent on <CR>
 set fillchars+=vert:│                             " Nicer vsplit separator.
 set number                                        " On current line, show
                                                   " absolute line number.
+" Deoplete
+" https://github.com/Shougo/deoplete.nvim
+"
+" Dark powered asynchronous completion framework for neovim/Vim8.
+let g:deoplete#enable_at_startup = 1              " Start at startup.
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
+
+" LanguageClient-neovim
+" https://github.com/autozimu/LanguageClient-neovim
+"
+" Client for servers providing language support and features.
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['~/.local/bin/pyls'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
+nnoremap <leader>jd :call LanguageClient#textDocument_definition()<CR>
 
 " DetectIndent
 " https://github.com/roryokane/detectindent
@@ -115,19 +134,6 @@ let g:airline#extensions#tabline#enabled=1        " Show the tabline.
 let g:airline#extensions#tabline#buffer_nr_show=1 " Show buffer numbers.
 let g:airline#extensions#tabline#show_tabs=0      " Don't show tabs in tabline.
 
-" YouCompleteMe
-" https://github.com/Valloric/YouCompleteMe
-"
-" Code completion, everywhere.
-nnoremap <leader>jd <Esc>:YcmCompleter GoTo<CR>   " Jump to definition.
-let g:ycm_global_ycm_extra_conf = '~/.local/share/nvim/site/ycm_extra_conf.py'
-let g:ycm_key_list_select_completion = ['<TAB>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>']
-
-" Eclim
-"
-let g:EclimCompletionMethod = 'omnifunc'          " Required for YCM to work.
-
 " Signify
 " https://github.com/mhinz/vim-signify
 "
@@ -146,7 +152,6 @@ let g:zoomwintab_hidetabbar=0                     " Don't hide tabbar when zoom.
 "
 " Asynchronously run programs.
 highlight NeomakeError ctermfg=196
-call neomake#configure#automake('nw', 750)        " Auto-make after 750ms
 
 " Tab Shortcut Keys
 "
