@@ -45,6 +45,7 @@ inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
 " https://github.com/autozimu/LanguageClient-neovim
 "
 " Client for servers providing language support and features.
+let g:LanguageClient_useVirtualText = 0           " autozimu/LanguageClient-neovim#745
 let g:LanguageClient_serverCommands = {
     \ 'python': ['~/.local/bin/pyls'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
