@@ -48,7 +48,7 @@ inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
 let g:LanguageClient_useVirtualText = 0           " autozimu/LanguageClient-neovim#745
 let g:LanguageClient_serverCommands = {
     \ 'python': ['~/.local/bin/pyls'],
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'rust': ['rls'],
     \ }
 nnoremap <leader>jd :call LanguageClient#textDocument_definition()<CR>
 
