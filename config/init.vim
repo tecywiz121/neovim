@@ -49,6 +49,7 @@ let g:LanguageClient_useVirtualText = 0           " autozimu/LanguageClient-neov
 let g:LanguageClient_serverCommands = {
     \ 'python': ['~/.local/bin/pyls'],
     \ 'rust': ['rls'],
+    \ 'ruby': ['solargraph', 'stdio'],
     \ }
 nnoremap <leader>jd :call LanguageClient#textDocument_definition()<CR>
 
