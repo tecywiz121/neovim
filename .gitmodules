@@ -73,3 +73,7 @@
 	path = share/bundle/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
 	branch = next
+[submodule "share/bundle/securemodelines"]
+	path = share/bundle/securemodelines
+	url = https://github.com/step-/securemodelines
+	branch = master

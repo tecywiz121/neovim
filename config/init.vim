@@ -30,9 +30,11 @@ set nohlsearch                                    " Disable highlight search.
 set relativenumber                                " Show relative line numbers.
 set inccommand=nosplit                            " Preview substitutions.
 set copyindent                                    " Copy previous indent on <CR>.
+set nomodeline                                    " No modelines (CVE-2019-12735).
 set fillchars+=vert:│                             " Nicer vsplit separator.
 set number                                        " On current line, show
                                                   " absolute line number.
+
 " Deoplete
 " https://github.com/Shougo/deoplete.nvim
 "
@@ -40,6 +42,12 @@ set number                                        " On current line, show
 let g:deoplete#enable_at_startup = 1              " Start at startup.
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
+
+" Securemodelines
+" https://github.com/step-/securemodelines
+"
+" A secure alternative to Vim modelines.
+let g:secure_modelines_verbose = 1                " Warn if unsupported option set.
 
 " LanguageClient-neovim
 " https://github.com/autozimu/LanguageClient-neovim
