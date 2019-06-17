@@ -77,3 +77,7 @@
 	path = share/bundle/securemodelines
 	url = https://github.com/step-/securemodelines
 	branch = master
+[submodule "share/bundle/vim-capnp"]
+	path = share/bundle/vim-capnp
+	url = https://github.com/cstrahan/vim-capnp
+	branch = master
