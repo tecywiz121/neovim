@@ -31,6 +31,7 @@ set relativenumber                                " Show relative line numbers.
 set inccommand=nosplit                            " Preview substitutions.
 set copyindent                                    " Copy previous indent on <CR>.
 set nomodeline                                    " No modelines (CVE-2019-12735).
+set diffopt+=vertical                             " Open diffs vertically.
 set fillchars+=vert:│                             " Nicer vsplit separator.
 set number                                        " On current line, show
                                                   " absolute line number.
