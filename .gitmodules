@@ -81,3 +81,7 @@
 	path = share/bundle/vim-capnp
 	url = https://github.com/cstrahan/vim-capnp
 	branch = master
+[submodule "share/bundle/vim-solidity"]
+	path = share/bundle/vim-solidity
+	url = https://github.com/tomlion/vim-solidity
+	branch = master
