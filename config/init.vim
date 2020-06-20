@@ -58,7 +58,9 @@ let g:LanguageClient_useVirtualText = 0           " autozimu/LanguageClient-neov
 let g:LanguageClient_serverCommands = {
     \ 'python': ['~/.local/bin/pyls'],
     \ 'rust': ['rls'],
+    \ 'cpp': ['clangd'],
     \ 'ruby': ['solargraph', 'stdio'],
+    \ 'go': ['~/go/bin/gopls'],
     \ }
 nnoremap <leader>jd :call LanguageClient#textDocument_definition()<CR>
 
@@ -142,6 +144,13 @@ set noshowmode                                    " Don't show mode in command l
 let g:airline#extensions#tabline#enabled=1        " Show the tabline.
 let g:airline#extensions#tabline#buffer_nr_show=1 " Show buffer numbers.
 let g:airline#extensions#tabline#show_tabs=0      " Don't show tabs in tabline.
+let g:airline_section_z = ""                      " Disable line information.
+
+" Don't show VCS hunk summary.
+let g:airline_section_b = "%{airline#util#wrap(airline#extensions#branch#get_head(),80)}"
+
+" Truncate the command name to one character.
+let g:airline_section_a = "%#__accent_bold#%{strpart(airline#util#wrap(airline#parts#mode(),0),0,1)}%#__restore__#%{airline#util#append(airline#parts#crypt(),0)}%{airline#util#append(airline#parts#paste(),0)}%{airline#util#append(airline#extensions#keymap#status(),0)}%{airline#util#append(airline#parts#spell(),0)}%{airline#util#append(\"\",0)}%{airline#util#append(\"\",0)}%{airline#util#append(airline#parts#iminsert(),0)}"
 
 " Signify
 " https://github.com/mhinz/vim-signify
@@ -168,6 +177,9 @@ highlight NeomakeError ctermfg=196
 nnoremap <F2> :tabnew<CR>
 nnoremap <F3> :tabprev<CR>
 nnoremap <F4> :tabnext<CR>
+
+" Change highlight of matching braces to make it more obvious
+hi MatchParen ctermfg=202 ctermbg=none guifg=#870000 guibg=none
 
 " Custom Code Folding
 "
