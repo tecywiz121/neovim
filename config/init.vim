@@ -54,7 +54,7 @@ let g:secure_modelines_verbose = 1                " Warn if unsupported option s
 " https://github.com/autozimu/LanguageClient-neovim
 "
 " Client for servers providing language support and features.
-let g:LanguageClient_useVirtualText = 0           " autozimu/LanguageClient-neovim#745
+let g:LanguageClient_useVirtualText = 'Diagnostics'   " autozimu/LanguageClient-neovim#745
 let g:LanguageClient_serverCommands = {
     \ 'python': ['~/.local/bin/pyls'],
     \ 'rust': ['rls'],
