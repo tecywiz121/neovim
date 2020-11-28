@@ -85,3 +85,6 @@
 	path = share/bundle/vim-solidity
 	url = https://github.com/tomlion/vim-solidity
 	branch = master
+[submodule "share/bundle/vim-qml"]
+	path = share/bundle/vim-qml
+	url = https://github.com/peterhoeg/vim-qml
