@@ -55,6 +55,7 @@ let g:secure_modelines_verbose = 1                " Warn if unsupported option s
 "
 " Client for servers providing language support and features.
 let g:LanguageClient_useVirtualText = 'Diagnostics'   " autozimu/LanguageClient-neovim#745
+let g:LanguageClient_virtualTextPrefix = ' ╍ '
 let g:LanguageClient_serverCommands = {
     \ 'python': ['~/.local/bin/pyls'],
     \ 'rust': ['rls'],
@@ -63,6 +64,10 @@ let g:LanguageClient_serverCommands = {
     \ 'go': ['~/go/bin/gopls'],
     \ }
 nnoremap <leader>jd :call LanguageClient#textDocument_definition()<CR>
+
+" Make error virtual text less... vibrant.
+hi Error cterm=italic ctermfg=197 ctermbg=None
+
 
 " DetectIndent
 " https://github.com/roryokane/detectindent
@@ -180,6 +185,36 @@ nnoremap <F4> :tabnext<CR>
 
 " Change highlight of matching braces to make it more obvious
 hi MatchParen ctermfg=202 ctermbg=none guifg=#870000 guibg=none
+
+" Keybind to pull up the most recently used hidden terminal buffer.
+function! FindTermBuf()
+  if exists('b:terminal_job_pid')
+    execute('startinsert!')
+    return
+  endif
+
+  let curbufs = tabpagebuflist()
+  let curbufs = filter(curbufs, {i, v -> has_key(getbufinfo(v)[0].variables, 'terminal_job_pid')})
+  if !empty(curbufs)
+    let bnr = bufwinnr(curbufs[0])
+    execute(bnr . 'wincmd w')
+    execute('startinsert!')
+    return
+  endif
+
+  let buffers = getbufinfo({'buflisted': 1})
+  let buffers = filter(buffers, {i, v -> v.hidden && has_key(v.variables, 'terminal_job_pid')})
+  let buffers = sort(buffers, {i -> i['lastused']})
+  if empty(buffers)
+    execute('vsplit | terminal')
+    execute('startinsert!')
+  else
+    execute('buffer ' . buffers[0].bufnr)
+    execute('startinsert!')
+  endif
+endfunction
+
+nnoremap <silent> <C-k> :call FindTermBuf()<CR>
 
 " Custom Code Folding
 "
