@@ -88,3 +88,7 @@
 [submodule "share/bundle/vim-qml"]
 	path = share/bundle/vim-qml
 	url = https://github.com/peterhoeg/vim-qml
+[submodule "share/bundle/vim-etk"]
+	path = share/bundle/vim-etk
+	url = https://github.com/quilt/vim-etk
+	branch = main
