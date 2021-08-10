@@ -2,6 +2,13 @@
 " Neovim Configuration                                                         "
 "------------------------------------------------------------------------------"
 
+" Python
+"
+" Manually set the python interpreters so neovim keeps working with
+" virtualenvs.
+let g:python_host_prog='/usr/bin/python2'
+let g:python3_host_prog='/usr/bin/python3'
+
 " Pathogen
 " https://github.com/tpope/vim-pathogen
 "
