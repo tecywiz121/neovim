@@ -23,6 +23,7 @@ syntax on                                         " Enable syntax highlighting.
 set wildchar=<Tab> wildmenu wildmode=longest,list " Bash-like completion.
 set backspace=indent,eol,start                    " Backspace anything!
 set expandtab                                     " Use spaces by default.
+set scrolloff=10                                  " Virtual lines around cursor.
 set hidden                                        " Switch buffers w/o saving.
 set completeopt-=preview                          " Disable completion preview.
 set splitright                                    " Open new split to the right.
