@@ -43,6 +43,7 @@ set copyindent                                    " Copy previous indent on <CR>
 set nomodeline                                    " No modelines (CVE-2019-12735).
 set diffopt+=vertical                             " Open diffs vertically.
 set fillchars+=vert:│                             " Nicer vsplit separator.
+set linebreak                                     " Soft wrap on word boundaries.
 set number                                        " On current line, show
                                                   " absolute line number.
 
@@ -50,12 +51,12 @@ set number                                        " On current line, show
 " https://github.com/hrsh7th/nvim-cmp
 "
 " A completion engine plugin for neovim written in Lua.
-set completeopt=menu,menuone,noselect
+set completeopt=menu,menuone
 
-imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+imap <expr> <C-l> vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)' : ''
+smap <expr> <C-l> vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)' : ''
+imap <expr> <C-h> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)' : ''
+smap <expr> <C-h> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)' : ''
 
 lua <<EOF
   -- Setup nvim-cmp.
