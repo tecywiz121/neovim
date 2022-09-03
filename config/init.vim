@@ -172,12 +172,6 @@ let g:signify_vcs_list = [ 'git' ]
 " Makes <C-w>o toggle zooming in and out
 let g:zoomwintab_hidetabbar=0                     " Don't hide tabbar when zoom.
 
-" Neomake
-" https://github.com/neomake/neomake
-"
-" Asynchronously run programs.
-highlight NeomakeError ctermfg=196
-
 " Tab Shortcut Keys
 "
 " Makes opening/closing and switching between tabs easier, stolen from byobu.

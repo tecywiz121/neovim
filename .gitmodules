@@ -57,10 +57,6 @@
 	path = share/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml
 	branch = main
-[submodule "share/bundle/neomake"]
-	path = share/bundle/neomake
-	url = https://github.com/neomake/neomake
-	branch = master
 [submodule "share/bundle/deoplete.nvim"]
 	path = share/bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
