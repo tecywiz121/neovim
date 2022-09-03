@@ -48,12 +48,6 @@ set fillchars+=vert:│                             " Nicer vsplit separator.
 set number                                        " On current line, show
                                                   " absolute line number.
 
-" Securemodelines
-" https://github.com/step-/securemodelines
-"
-" A secure alternative to Vim modelines.
-let g:secure_modelines_verbose = 1                " Warn if unsupported option set.
-
 " nvim-lspconfig
 " https://github.com/neovim/nvim-lspconfig
 "
