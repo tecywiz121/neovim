@@ -2,6 +2,10 @@
 " Neovim Configuration                                                         "
 "------------------------------------------------------------------------------"
 
+" TODO: Look into global statusline (laststatus=3)
+" TODO: Find a more active colorscheme than kalisi
+
+
 " Python
 "
 " Manually set the python interpreters so neovim keeps working with
@@ -87,9 +91,6 @@ filetype indent on                                " Better indentation.
 filetype plugin on                                " Load filetype specific
                                                   " plugins.
 
-" Antlr Syntax
-au BufRead,BufNewFile *.g4 set filetype=antlr4    " Set filetype for *.g4 files
-
 " Highlight Trailing Whitespace
 "
 " Track which buffers have been created, and set the highlighting only once.
@@ -150,8 +151,6 @@ let g:airline#extensions#tabline#enabled=1        " Show the tabline.
 let g:airline#extensions#tabline#buffer_nr_show=1 " Show buffer numbers.
 let g:airline#extensions#tabline#show_tabs=0      " Don't show tabs in tabline.
 let g:airline_section_z = ""                      " Disable line information.
-
-" TODO: Look into global statusline (laststatus=3)
 
 " Don't show VCS hunk summary.
 let g:airline_section_b = "%{airline#util#wrap(airline#extensions#branch#get_head(),80)}"
@@ -216,9 +215,11 @@ nnoremap <silent> <C-k> :call FindTermBuf()<CR>
 "
 " Vim's default fold text isn't super useful, so we replace it with something
 " a little better.
-set foldlevelstart=99                             " Expand all folds by default.
 set foldtext=CustomFoldText()                     " Enable our sweet fold text.
-set foldmethod=syntax                             " Fold based on syntax.
+set foldmethod=expr                               " Fold based on an expression.
+set foldexpr=nvim_treesitter#foldexpr()           " Use tree-sitter for folds.
+set foldlevelstart=99                             " Expand all folds by default.
+
 function! CustomFoldText()
   " Get the first non-blank line
   let fs = v:foldstart
@@ -253,4 +254,18 @@ function! CustomFoldText()
   let expansionString = repeat(" ", w - strwidth(foldSizeStr.line))
   return line . expansionString . foldSizeStr
 endfunction
+
+" Treesitter
+" https://github.com/nvim-treesitter/nvim-treesitter
+"
+" Provides a concrete syntax tree for source files, and basic functionality
+" based on it (such as syntax highlighting.)
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",
+  highlight = { enable = true },
+  indent = { enable = true }
+}
+EOF
+
 " vim: set et ts=2 sw=2:

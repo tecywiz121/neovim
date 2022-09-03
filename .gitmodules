@@ -33,18 +33,10 @@
 	path = share/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
 	branch = master
-[submodule "share/bundle/vim-pug"]
-	path = share/bundle/vim-pug
-	url = https://github.com/digitaltoad/vim-pug
-	branch = master
 [submodule "share/bundle/vala.vim"]
 	path = share/bundle/vala.vim
 	branch = master
 	url = https://github.com/arrufat/vala.vim
-[submodule "share/bundle/vim-antlr"]
-	path = share/bundle/vim-antlr
-	url = https://github.com/dylon/vim-antlr
-	branch = master
 [submodule "share/bundle/zoomwintab.vim"]
 	path = share/bundle/zoomwintab.vim
 	url = https://github.com/troydm/zoomwintab.vim
@@ -53,10 +45,6 @@
 	path = share/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
 	branch = master
-[submodule "share/bundle/vim-toml"]
-	path = share/bundle/vim-toml
-	url = https://github.com/cespare/vim-toml
-	branch = main
 [submodule "share/bundle/deoplete.nvim"]
 	path = share/bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
@@ -83,4 +71,8 @@
 [submodule "share/bundle/vim-sleuth"]
 	path = share/bundle/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth
+	branch = master
+[submodule "share/bundle/nvim-treesitter"]
+	path = share/bundle/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
 	branch = master
