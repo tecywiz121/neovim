@@ -70,6 +70,7 @@ let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd'],
     \ 'ruby': ['solargraph', 'stdio'],
     \ 'go': ['~/go/bin/gopls'],
+    \ 'tex': ['texlab'],
     \ }
 nnoremap <leader>jd :call LanguageClient#textDocument_definition()<CR>
 
@@ -158,6 +159,8 @@ let g:airline#extensions#tabline#enabled=1        " Show the tabline.
 let g:airline#extensions#tabline#buffer_nr_show=1 " Show buffer numbers.
 let g:airline#extensions#tabline#show_tabs=0      " Don't show tabs in tabline.
 let g:airline_section_z = ""                      " Disable line information.
+
+" TODO: Look into global statusline (laststatus=3)
 
 " Don't show VCS hunk summary.
 let g:airline_section_b = "%{airline#util#wrap(airline#extensions#branch#get_head(),80)}"
