@@ -60,7 +60,7 @@
 [submodule "share/bundle/vim-toml"]
 	path = share/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml
-	branch = master
+	branch = main
 [submodule "share/bundle/neomake"]
 	path = share/bundle/neomake
 	url = https://github.com/neomake/neomake
