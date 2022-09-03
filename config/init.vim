@@ -78,15 +78,6 @@ nnoremap <leader>jd :call LanguageClient#textDocument_definition()<CR>
 hi Error cterm=italic ctermfg=197 ctermbg=None
 
 
-" DetectIndent
-" https://github.com/roryokane/detectindent
-"
-" Uses fancy algorithms to try and figure out what style of indentation the
-" current buffer uses.
-let g:detectindent_preferred_indent = 4           " 4 spaces by default.
-autocmd BufReadPost * :DetectIndent               " After reading buffer, detect
-                                                  " indentation.
-
 " Filetype
 "
 " Detects the type of the current file based of the extension and contents,

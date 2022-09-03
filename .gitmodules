@@ -2,10 +2,6 @@
 	path = ext/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
 	branch = master
-[submodule "share/bundle/detectindent"]
-	path = share/bundle/detectindent
-	url = https://github.com/roryokane/detectindent
-	branch = master
 [submodule "share/bundle/vim-kalisi"]
 	path = share/bundle/vim-kalisi
 	url = https://github.com/freeo/vim-kalisi
@@ -73,10 +69,6 @@
 	path = share/bundle/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
 	branch = next
-[submodule "share/bundle/securemodelines"]
-	path = share/bundle/securemodelines
-	url = https://github.com/step-/securemodelines
-	branch = master
 [submodule "share/bundle/vim-capnp"]
 	path = share/bundle/vim-capnp
 	url = https://github.com/cstrahan/vim-capnp
@@ -92,3 +84,7 @@
 	path = share/bundle/vim-etk
 	url = https://github.com/quilt/vim-etk
 	branch = main
+[submodule "share/bundle/vim-sleuth"]
+	path = share/bundle/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth
+	branch = master
