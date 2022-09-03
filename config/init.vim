@@ -3,7 +3,6 @@
 "------------------------------------------------------------------------------"
 
 " TODO: Look into global statusline (laststatus=3)
-" TODO: Find a more active colorscheme than kalisi
 
 
 " Python
@@ -21,11 +20,11 @@ let g:python3_host_prog='/usr/bin/python3'
 call pathogen#infect()                            " Initialize Pathogen
 
 " Theme
-" https://github.com/freeo/vim-kalisi
+" https://github.com/Mofiqul/adwaita.nvim
 "
 " A theme designed with neovim in mind.
 set background=dark                               " Use dark version of theme.
-colorscheme kalisi                                " Use kalisi color scheme.
+colorscheme adwaita                               " Use adwaita color scheme.
 
 " Tweeks
 "
@@ -135,6 +134,13 @@ for _, lsp in pairs(servers) do
   local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
   lspconfig[lsp].setup({
+    settings = {
+      ["rust-analyzer"] = {
+        assist = {
+          importGranularity = "module"
+        }
+      }
+    },
     capabilities = capabilities,
     on_attach = on_attach,
     flags = {
@@ -172,7 +178,7 @@ call matchadd('WhitespaceEOL', '\s\+$')
 "
 " Change the background color past column 80 to indicate you've typed too
 " much.
-highlight ColorColumn ctermbg=239 guibg=#39393b
+highlight ColorColumn ctermbg=239 guibg=#2a2a2a
 execute "set colorcolumn=" . join(range(81,335), ',')
 
 " Embedded Terminal
