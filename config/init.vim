@@ -36,7 +36,6 @@ set backspace=indent,eol,start                    " Backspace anything!
 set expandtab                                     " Use spaces by default.
 set scrolloff=10                                  " Virtual lines around cursor.
 set hidden                                        " Switch buffers w/o saving.
-set completeopt-=preview                          " Disable completion preview.
 set splitright                                    " Open new split to the right.
 set nohlsearch                                    " Disable highlight search.
 set relativenumber                                " Show relative line numbers.
@@ -48,6 +47,49 @@ set fillchars+=vert:│                             " Nicer vsplit separator.
 set number                                        " On current line, show
                                                   " absolute line number.
 
+" nvim-cmp
+" https://github.com/hrsh7th/nvim-cmp
+"
+" A completion engine plugin for neovim written in Lua.
+set completeopt=menu,menuone,noselect
+
+imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+lua <<EOF
+  -- Setup nvim-cmp.
+  local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      end,
+    },
+    mapping = {
+      ['<Tab>'] = cmp.mapping.select_next_item(),
+      ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+EOF
+
 " nvim-lspconfig
 " https://github.com/neovim/nvim-lspconfig
 "
@@ -55,6 +97,7 @@ set number                                        " On current line, show
 " client.
 lua <<EOF
 local lspconfig = require('lspconfig')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
@@ -89,7 +132,10 @@ end
 -- map buffer local keybindings when the language server attaches
 local servers = { 'pylsp', 'rust_analyzer', 'clangd', 'solargraph', 'gopls', 'texlab' }
 for _, lsp in pairs(servers) do
+  local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
   lspconfig[lsp].setup({
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = {
       -- This will be the default in neovim 0.7+
