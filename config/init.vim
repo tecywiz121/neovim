@@ -65,7 +65,7 @@ let g:secure_modelines_verbose = 1                " Warn if unsupported option s
 let g:LanguageClient_useVirtualText = 'Diagnostics'   " autozimu/LanguageClient-neovim#745
 let g:LanguageClient_virtualTextPrefix = ' ╍ '
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['~/.local/bin/pyls'],
+    \ 'python': ['pylsp'],
     \ 'rust': ['rls'],
     \ 'cpp': ['clangd'],
     \ 'ruby': ['solargraph', 'stdio'],
