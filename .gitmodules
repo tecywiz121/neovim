@@ -16,7 +16,7 @@
 	branch = master
 [submodule "share/bundle/vim-airline"]
 	path = share/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
+	url = https://github.com/vim-airline/vim-airline
 	branch = master
 [submodule "share/bundle/vim-fugitive"]
 	path = share/bundle/vim-fugitive
@@ -45,14 +45,6 @@
 	path = share/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
 	branch = master
-[submodule "share/bundle/deoplete.nvim"]
-	path = share/bundle/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
-	branch = master
-[submodule "share/bundle/LanguageClient-neovim"]
-	path = share/bundle/LanguageClient-neovim
-	url = https://github.com/autozimu/LanguageClient-neovim
-	branch = next
 [submodule "share/bundle/vim-capnp"]
 	path = share/bundle/vim-capnp
 	url = https://github.com/cstrahan/vim-capnp
@@ -75,4 +67,8 @@
 [submodule "share/bundle/nvim-treesitter"]
 	path = share/bundle/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+	branch = master
+[submodule "share/bundle/nvim-lspconfig"]
+	path = share/bundle/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
 	branch = master
