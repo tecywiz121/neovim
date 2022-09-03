@@ -48,8 +48,6 @@ set fillchars+=vert:│                             " Nicer vsplit separator.
 set number                                        " On current line, show
                                                   " absolute line number.
 
-"
-
 " Securemodelines
 " https://github.com/step-/securemodelines
 "
@@ -95,7 +93,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pylsp', 'rust_analyzer' }
+local servers = { 'pylsp', 'rust_analyzer', 'clangd', 'solargraph', 'gopls', 'texlab' }
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,
@@ -106,22 +104,6 @@ for _, lsp in pairs(servers) do
   })
 end
 EOF
-
-" LanguageClient-neovim
-" https://github.com/autozimu/LanguageClient-neovim
-"
-" Client for servers providing language support and features.
-let g:LanguageClient_useVirtualText = 'Diagnostics'   " autozimu/LanguageClient-neovim#745
-let g:LanguageClient_virtualTextPrefix = ' ╍ '
-let g:LanguageClient_serverCommands = {
-    \ 'python': ['pylsp'],
-    \ 'rust': ['rls'],
-    \ 'cpp': ['clangd'],
-    \ 'ruby': ['solargraph', 'stdio'],
-    \ 'go': ['~/go/bin/gopls'],
-    \ 'tex': ['texlab'],
-    \ }
-nnoremap <leader>jd :call LanguageClient#textDocument_definition()<CR>
 
 " Make error virtual text less... vibrant.
 hi Error cterm=italic ctermfg=197 ctermbg=None
